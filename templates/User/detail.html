@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>detail</title>
+</head>
+<body>
+问题:<br/>
+<h3>{{ ques.question_desc }}</h3>
+答案:<br/>
+<ul>
+    {% for answ in answs %}
+        <li>{{ answ.answer_desc }}</li>
+    {% endfor %}
+</ul>
+</body>
+</html>

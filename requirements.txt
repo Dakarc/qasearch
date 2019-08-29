@@ -1,0 +1,17 @@
+asn1crypto==0.24.0
+certifi==2019.6.16
+cffi==1.12.3
+chardet==3.0.4
+cryptography==2.7
+demjson==2.2.4
+Django==2.2.2
+idna==2.8
+pycparser==2.19
+pycurl==7.43.0.3
+PyMySQL==0.9.3
+pyOpenSSL==19.0.0
+pytz==2019.1
+requests==2.22.0
+six==1.12.0
+sqlparse==0.3.0
+urllib3==1.25.3
