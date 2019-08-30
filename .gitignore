@@ -1,6 +1,7 @@
 #自定义
 .idea
 Pt/settings.py
+.DS_Store
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
