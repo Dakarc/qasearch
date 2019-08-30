@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>答案列表</title>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/iScroll/5.2.0/iscroll-infinite.js"></script>
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <style>
+        .btn-footer{
+            height: 100px;
+            width: 92%;
+            background-color: #eeeeee;
+            position: fixed;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<h3 class="text-primary text-center">
+				答案列表
+			</h3>
+			<div class="list-group">
+                {% for qa in qas %}
+                <div class="list-group-item active">{{ qa.questionDesc }}</div>
+                    {% for answer in qa.answers %}
+				    <div class="list-group-item">{{ answer.answerDesc }}</div>
+                    {% endfor %}
+                {% endfor %}
+			</div>
+            <div class="btn-footer">
+                <form class="form-horizontal" role="form" action="/search" method="post">
+                    <div class="form-group">
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="question" name="question" placeholder="继续搜索问题" />
+                        </div>
+                            <input type="hidden" class="form-control" id="page" name="page" value="1" />
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-10">
+                             <button type="submit" class="btn btn-primary btn-default btn-block">搜索</button>
+                        </div>
+                    </div>
+			    </form>
+            </div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

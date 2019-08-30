@@ -1,0 +1,25 @@
+"""Pt URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/2.2/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path,include
+from django.conf.urls import url
+
+urlpatterns = [
+    path('admin/', admin.site.urls), #原带的
+    # path(r'', include('User.urls',namespace="User")),
+    # url(r'^api/',include('User.urls',namespace='User',app_name='User')),#视频里教的,报错,多第三参数
+    url(r'^',include('User.urls',namespace='User')),
+]

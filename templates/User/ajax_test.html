@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>testAjax</title>
+    <script src="/static/js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            //绑定Ajax的click事件
+            $('#btnAjax').click(function () {
+                $.ajax({
+                    'url': '/ajax_handle',
+                    'dataType': 'json',
+                    'async': false,//变为同步
+                }).success(function (data) {
+                    //进行处理
+                    // alert(data.res)
+                    if (data.res == 1) {
+                        $('#message').show().html('返回值正常')
+                    }
+                })
+            })
+        })
+    </script>
+    <style>
+        #message {
+            display: none;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" id="btnAjax" value="Ajax请求">
+    <div id="message"></div>
+</body>
+</html>

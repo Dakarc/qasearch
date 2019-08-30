@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>show_ques</title>
+</head>
+<body>
+问题列表:<br/>
+<ul>
+    {% for q in quess%}
+        <li><a href="/detail/{{ q.id }}">{{ q.question_desc }}</a></li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
